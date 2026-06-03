@@ -1,0 +1,56 @@
+@import "../../styles/global.scss";
+
+.nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin: -8px;
+    transform: translateY(-12%);
+
+    .ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        .li {
+            flex: 20%;
+            padding-top: 1.2%;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 24px;
+            a {
+                text-decoration: none;
+                color: #fff;
+                position: relative;
+            }
+
+            a::after {
+                position: absolute;
+                content: '';
+                bottom: -7px;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                border-radius: 10px;
+                background-color: $color-two;
+                transition: all 0.3s ease-in-out;
+                transform: translateX(-50%);
+            }
+
+            a:hover::after {
+                width: 100%;
+                padding: 1px;
+            }
+
+            a:hover {
+                color: $color-two;
+            }
+
+            .isActive {
+                color: $color-two;
+            }
+        }
+    }
+}
