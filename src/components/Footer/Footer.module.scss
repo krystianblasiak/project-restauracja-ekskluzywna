@@ -1,0 +1,52 @@
+@import "../../styles/global.scss";
+
+.footer {
+    background-color: #151515;
+    height: 15vh;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    .wrapper {
+        .ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            transform: translateY(50%);
+            padding-top: 2%;
+            
+            .li {
+                flex: 50%;
+                a {
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #fff;
+                }
+
+                a:hover {
+                    color: $color-two;
+                }
+
+                .isActive {
+                    color: $color-two;
+                }
+            }
+        }
+    }
+
+    .h6 {
+        transform: translateY(50%);
+        padding-top: 1%;
+        font-size: 13px;
+        position: relative;
+    }
+
+    .h6::before {
+        position: absolute;
+        content: '';
+        top: 2px;
+        left: 1.5%;
+        height: 2px;
+        width: 96vw;
+        background-color: #fff;
+    }
+}

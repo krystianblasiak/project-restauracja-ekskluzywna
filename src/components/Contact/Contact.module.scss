@@ -3,7 +3,8 @@
 .section {
     background-color: $color-one;
     padding-top: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
+    margin-bottom: -16px;
     .h2 {
         text-align: center;
         font-size: 45px;
@@ -49,7 +50,7 @@
                 height: 6vh;
                 width: 14vw;
                 font-size: 20px;
-                border-radius: 20px;
+                border-radius: 30px;
                 background-color: $color-two;
                 border: none;
                 color: #fff;
@@ -64,7 +65,8 @@
         .p {
             flex: 50%;
             font-size: 22px;
-            margin-left: 7%;
+            margin-left: 9%;
+            font-weight: 600;
         }
     }
 }
