@@ -4,7 +4,7 @@ import Container from "../Container/Container";
 const AboutUs = () => {
     return (
         <Container>
-            <section className={styles.section}>
+            <section id="onas" className={styles.section}>
                 <h2 className={styles.h2}>O Nas</h2>
                 <div className={styles.wrapper}>
                     <img className={styles.img} src="images/pexels-ali-dashti-506667798-28241708.jpg" alt="Restauracja Ekskluzywna"></img>

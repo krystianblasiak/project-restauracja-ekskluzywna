@@ -1,0 +1,70 @@
+@import "../../styles/global.scss";
+
+.section {
+    background-color: $color-one;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    .h2 {
+        text-align: center;
+        font-size: 45px;
+        font-family: "Open Sans";
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+        .form {
+            flex: 50%;
+            text-align: center;
+            
+            .input {
+                margin: 10px;
+                padding: 7px;
+                padding-left: 10px;
+                border-radius: 20px;
+                height: 5vh;
+                width: 12vw;
+                border: none;
+                font-size: 18px;
+            }
+
+            .input::placeholder,.textarea::placeholder {
+                padding-left: 2px;
+            }
+
+            .textarea {
+                margin: 10px;
+                padding: 7px;
+                padding-left: 10px;
+                border-radius: 20px;
+                height: 20vh;
+                width: 26vw;
+                border: none;
+                font-size: 18px;
+            }
+
+            .btn {
+                margin-top: 5%;
+                height: 6vh;
+                width: 14vw;
+                font-size: 20px;
+                border-radius: 20px;
+                background-color: $color-two;
+                border: none;
+                color: #fff;
+            }
+
+            .btn:hover {
+                background-color: #ff4400;
+                cursor: pointer;
+            }
+        }
+
+        .p {
+            flex: 50%;
+            font-size: 22px;
+            margin-left: 7%;
+        }
+    }
+}
