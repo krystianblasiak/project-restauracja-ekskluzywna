@@ -16,13 +16,12 @@ const initialState = {
 
     reservations: [],
     timeSlots: [
-        { id: 1, time: "15:00"},
-        { id: 2, time: "16:00"},
-        { id: 3, time: "17:00"},
-        { id: 4, time: "18:00"},
-        { id: 5, time: "19:00"},
-        { id: 6, time: "20:00"},
-        { id: 7, time: "21:00"},
+        { id: 1, time: "16:00"},
+        { id: 2, time: "17:00"},
+        { id: 3, time: "18:00"},
+        { id: 4, time: "19:00"},
+        { id: 5, time: "20:00"},
+        { id: 6, time: "21:00"},
     ],
     selectedDate: new Date().toISOString().split("T")[0]
 }
