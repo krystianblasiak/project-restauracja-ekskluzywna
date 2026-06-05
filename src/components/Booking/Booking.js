@@ -1,56 +1,115 @@
 import styles from "./Booking.module.scss";
 import Calendar from "../Calendar/Calendar";
 import Container from "../Container/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { addReservation } from "../../redux/reservationSlice";
 
 const Booking = () => {
-    const handleChange = (e) => {
+    const dispatch = useDispatch();
+
+    const { tables = [], reservations = [], timeSlots = [], selectedDate } = useSelector(
+    (state) => state.reservations || {});
+    const [dataForm, setDataForm] = useState({
+        name: '',
+        surname: '',
+        email: '',
+        phone: '',
+        tableId: '',
+        date: '',
+        time: ''
+    });
+
+    const occupiedIds = reservations.filter(r => r.date === selectedDate && r.time === dataForm.time).map(r => r.tableId);
+    const filtered = tables.map(table => ({
+        ...table,
+        available: !occupiedIds.includes(table.id)
+    }));
+
+    const occupiedTime = reservations.filter(r => r.date === selectedDate && r.time === dataForm.time).map(r => r.time);
+    const filteredTime = timeSlots.map(t => ({
+        ...t,
+        available: !occupiedTime.includes(t.time)
+    }));
+
+    const [availableTables, setAvailableTables] = useState(filtered);
+    const [availableTime, setAvailableTime] = useState(filteredTime);
+    const [status, setStatus] = useState('');
+    
+    useEffect(() => {
+        const occupiedIds = reservations.filter(r => r.date === selectedDate && r.time === dataForm.time).map(r => r.tableId);
+        const filtered = tables.map(table => ({
+            ...table,
+            available: !occupiedIds.includes(table.id)
+        }));
+
+        setAvailableTables(filtered);
+    }, [selectedDate, dataForm, reservations, tables]);
+
+    useEffect(() => {
+        for(let i = 0; i < reservations.length; i++){
+            const occupiedTime = reservations.filter(r => r.date === selectedDate && r.tableId === dataForm.tableId ).map(r => r.time);
+            const filteredTime = timeSlots.map(t => ({
+                ...t,
+                available: !occupiedTime.includes(t.time)
+            }));
+            setAvailableTime(filteredTime);
+        }
+        
+        
+    }, [selectedDate, dataForm, reservations, timeSlots]);
+
+    const handleSubmit = (e) => {
         e.preventDefault();
+        const selectedTable = tables.find(t => t.id  === Number(dataForm.tableId));
+
+        dispatch(addReservation({
+            name: dataForm.name,
+            surname: dataForm.surname,
+            email: dataForm.email,
+            phone: dataForm.phone,
+            tableId: dataForm.tableId,
+            date: selectedDate,
+            time: dataForm.time,
+            tableName: selectedTable.name
+        }));
+
+        setStatus(`✅ Zarezerwowano stolik nr ${dataForm.tableId} na ${dataForm.time} dnia ${selectedDate}`);
+        setDataForm({
+            name: '', surname: '', email: '', phone: '', tableId: '', time: ''
+        });
     };
+
+    const handleTimeClick = (t) => {
+        setDataForm({ ...dataForm, time: t});
+    }
 
     return (
         <div className={styles.booking}>
             <Container>
                 <h2 className={styles.h2}>Rezerwacja</h2>
-                <form className={styles.form} onChange={handleChange}>
-                    <input className={styles.input1} placeholder="Imię" type="text"></input>
-                    <input className={styles.input1} placeholder="Nazwisko" type="text"></input><br />
-                    <input className={styles.input} placeholder="E-mail" type="email"></input><br />
-                    <input className={styles.input} placeholder="Telefon kontaktowy" type="tel"></input> <br />
-                    <select className={styles.input2}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <input className={styles.input1} placeholder="Imię" type="text" value={dataForm.name} onChange={e => setDataForm({ ...dataForm, name: e.target.value})} required></input>
+                    <input className={styles.input1} placeholder="Nazwisko" type="text" value={dataForm.surname} onChange={e => setDataForm({ ...dataForm, surname: e.target.value})} required></input><br />
+                    <input className={styles.input} placeholder="E-mail" type="email" value={dataForm.email} onChange={e => setDataForm({ ...dataForm, email: e.target.value})} required></input><br />
+                    <input className={styles.input} placeholder="Telefon kontaktowy" type="tel" value={dataForm.phone} onChange={e => setDataForm({ ...dataForm, phone: e.target.value})} required></input> <br />
+                    <select className={styles.input2} value={dataForm.tableId} onChange={e => setDataForm({ ...dataForm, tableId: e.target.value})} required>
                         <option value="" disabled selected>Nr stolika</option>
-                        <option value={1}>1</option>
-                        <option value={2}>2</option>
-                        <option value={3}>3</option>
-                        <option value={4}>4</option>
-                        <option value={5}>5</option>
-                        <option value={6}>6</option>
-                        <option value={7}>7</option>
-                        <option value={8}>8</option>
-                        <option value={9}>9</option>
-                        <option value={10}>10</option>
-                        <option value={11}>11</option>
-                        <option value={12}>12</option>
-                        <option value={13}>13</option>
-                        <option value={14}>14</option>
-                        <option value={15}>15</option>
+                        {availableTables.map(table => (<option key={table.id} value={table.id} disabled={!table.available}>
+                            {table.name} ({table.seats} os.)
+                        </option>))}
                     </select>
                     <div className={styles.wrapper}>
                         <Calendar />
                         <div className={styles.box}>
                             <div className={styles.box1}>
-                                <button className={styles.btn1} onClick={handleChange}>16:00</button>
-                                <button className={styles.btn1} onClick={handleChange}>17:00</button>
-                                <button className={styles.btn1} onClick={handleChange}>18:00</button>
-                            </div>
-                            <div className={styles.box1}>
-                                <button className={styles.btn1} onClick={handleChange}>19:00</button>
-                                <button className={styles.btn1} onClick={handleChange}>20:00</button>
-                                <button className={styles.btn1} onClick={handleChange}>21:00</button>
+                                {availableTime.map(t => <button key={t.id} type="button" className={`${styles.btn1} ${!t.available ? styles.isActive : ''}`} disabled={!t.available} onClick={(e) => {e.preventDefault(); handleTimeClick(t.time)}}>{t.time}</button>)}
                             </div>
                         </div>
                     </div>
                     <br />
-                    <button type="submit" className={styles.btn}>Rezerwuj</button>
+                    <button type="submit" className={styles.btn} disabled={!dataForm.time || !dataForm.tableId}>Rezerwuj</button>
+                    <br /> <br /> <br />{status && <p>{status}</p>}
                 </form>
             </Container>
         </div>

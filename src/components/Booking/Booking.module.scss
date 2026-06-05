@@ -60,6 +60,7 @@
                         height: 60px;
                         border-radius: 15px;
                         border: 3px solid #0652DD;
+                        color: #0652DD;
                         font-size: 20px;
                     }
 
@@ -68,6 +69,20 @@
                         background-color: #0652DD;
                         cursor: pointer;
                         transform: scale(1.1);
+                    }
+
+                    .isActive {
+                        border: 3px solid #6e95da;
+                        background-color: #d8d8d8;
+                        color: #6e95da;
+                    }
+
+                    .isActive:hover {
+                        transform: scale(1);
+                        background-color: #d8d8d8;
+                        cursor:no-drop;
+                        color: #6e95da;
+
                     }
                 }
             }

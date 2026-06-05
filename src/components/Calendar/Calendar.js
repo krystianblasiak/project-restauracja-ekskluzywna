@@ -1,9 +1,12 @@
 import { useState } from "react";
 import styles from "./Calendar.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedDate } from "../../redux/reservationSlice";
 
 const Calendar = () => {
+    const dispatch = useDispatch();
     const [currentDate, setCurrentDate] = useState(new Date());
-    const [selectedDate, setSelectedDate] = useState('');
+    const selectedDate = useSelector(state => state.reservations.selectedDate);
 
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
@@ -11,12 +14,13 @@ const Calendar = () => {
     const daysOfWeek = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Niedz'];
     const monthName = currentDate.toLocaleString('pl-PL', { month: 'long', year: 'numeric' });
 
-
     // Generowanie dni
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+
     const days = [];
+
     // Puste komórki na początku
     for (let i = 0; i < (firstDay === 0 ? 6 : firstDay - 1); i++) {
         days.push({ day: '', isCurrentMonth: false });
@@ -38,7 +42,7 @@ const Calendar = () => {
 
     const handleDateClick = (dateStr) => {
         if (!dateStr) return;
-        setSelectedDate(dateStr);
+        dispatch(setSelectedDate(dateStr));
     };
 
     const prevMonth = (e) => {
@@ -66,16 +70,12 @@ const Calendar = () => {
             {days.map((item, index) => (
             <div
                 key={index}
-                className={`date-cell ${
-                !item.isCurrentMonth ? 'other-month' : ''
-                } ${item.isToday ? 'today' : ''}
-                ${item.occupied ? 'occupied' : ''}
+                className={`date-cell ${!item.isCurrentMonth ? 'other-month' : ''}
+                ${item.isToday ? 'today' : ''}
                 ${item.dateStr === selectedDate ? 'selected' : ''}
                 ${item.isPast ? 'past' : ''}`}
-                onClick={() => !item.isPast && handleDateClick(item.dateStr)}
-            >
+                onClick={() => !item.isPast && handleDateClick(item.dateStr)}>
                 {item.day}
-                {item.occupied && <span className="occupied-dot"></span>}
             </div>
             ))}
         </div>
@@ -98,7 +98,7 @@ const Calendar = () => {
             .date-cell:hover:not(.past):not(.other-month) {
             background: #0652DD;
             color: #fff;
-            transform: scale(1.05);
+            transform: scale(1.1);
             }
             .date-cell.today {
             background: #e3f2fd;

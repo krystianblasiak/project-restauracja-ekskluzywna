@@ -32,6 +32,10 @@
             font-size: 1.4rem;
             cursor: pointer;
         }
+
+        .navBtn:hover {
+            transform: scale(1.1);
+        }
     }
 
     .weekdays {
