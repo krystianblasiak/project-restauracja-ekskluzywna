@@ -83,7 +83,12 @@
                         background-color: #d8d8d8;
                         cursor:no-drop;
                         color: #6e95da;
+                    }
 
+                    .isClick {
+                        transform: scale(1.1);
+                        background-color: #0652DD;
+                        color: #fff;
                     }
                 }
             }

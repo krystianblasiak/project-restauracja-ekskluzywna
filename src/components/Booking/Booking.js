@@ -3,12 +3,12 @@ import Calendar from "../Calendar/Calendar";
 import Container from "../Container/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { addReservation } from "../../redux/reservationSlice";
+import { addReservation, resetStatus, sendReservation } from "../../redux/reservationSlice";
 
 const Booking = () => {
     const dispatch = useDispatch();
 
-    const { tables = [], reservations = [], timeSlots = [], selectedDate } = useSelector(
+    const { tables = [], reservations = [], timeSlots = [], selectedDate, success } = useSelector(
     (state) => state.reservations || {});
     const [dataForm, setDataForm] = useState({
         name: '',
@@ -19,6 +19,8 @@ const Booking = () => {
         date: '',
         time: ''
     });
+
+    const [selectedTime, setSelectedTime] = useState("");
 
     const occupiedIds = reservations.filter(r => r.date === selectedDate && r.time === dataForm.time).map(r => r.tableId);
     const filtered = tables.map(table => ({
@@ -57,7 +59,16 @@ const Booking = () => {
         }
         
         
-    }, [selectedDate, dataForm, reservations, timeSlots]);
+    }, [selectedDate, dataForm.time, dataForm.tableId, reservations, timeSlots]);
+
+    useEffect(() => {
+        if(success){
+            const timer = setTimeout(() => dispatch(resetStatus()) , 600);
+            return () => clearTimeout(timer);
+        }
+    }, [success, dispatch]);
+
+    useEffect(() => { setDataForm({ ...dataForm, date: selectedDate})}, [selectedDate, dataForm.date]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -69,20 +80,25 @@ const Booking = () => {
             email: dataForm.email,
             phone: dataForm.phone,
             tableId: dataForm.tableId,
-            date: selectedDate,
+            date: String(selectedDate),
             time: dataForm.time,
             tableName: selectedTable.name
         }));
+
+        dispatch(sendReservation(dataForm));
 
         setStatus(`✅ Zarezerwowano stolik nr ${dataForm.tableId} na ${dataForm.time} dnia ${selectedDate}`);
         setDataForm({
             name: '', surname: '', email: '', phone: '', tableId: '', time: ''
         });
+
+        setSelectedTime("");
     };
 
-    const handleTimeClick = (t) => {
+    const handleTimeClick = (t, tId) => {
         setDataForm({ ...dataForm, time: t});
-    }
+        setSelectedTime(tId);
+    };
 
     return (
         <div className={styles.booking}>
@@ -103,7 +119,7 @@ const Booking = () => {
                         <Calendar />
                         <div className={styles.box}>
                             <div className={styles.box1}>
-                                {availableTime.map(t => <button key={t.id} type="button" className={`${styles.btn1} ${!t.available ? styles.isActive : ''}`} disabled={!t.available} onClick={(e) => {e.preventDefault(); handleTimeClick(t.time)}}>{t.time}</button>)}
+                                {availableTime.map(t => <button key={t.id} type="button" className={`${styles.btn1} ${!t.available ? styles.isActive : ''} ${t.id === Number(selectedTime) ? styles.isClick : ''}`} disabled={!t.available} onClick={(e) => {e.preventDefault(); handleTimeClick(t.time, t.id)}}>{t.time}</button>)}
                             </div>
                         </div>
                     </div>

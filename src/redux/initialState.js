@@ -16,14 +16,17 @@ const initialState = {
 
     reservations: [],
     timeSlots: [
-        { id: 1, time: "16:00"},
-        { id: 2, time: "17:00"},
-        { id: 3, time: "18:00"},
-        { id: 4, time: "19:00"},
-        { id: 5, time: "20:00"},
-        { id: 6, time: "21:00"},
+        { id: 1, time: "16:00", isClick: false },
+        { id: 2, time: "17:00", isClick: false },
+        { id: 3, time: "18:00", isClick: false },
+        { id: 4, time: "19:00", isClick: false },
+        { id: 5, time: "20:00", isClick: false },
+        { id: 6, time: "21:00", isClick: false },
     ],
-    selectedDate: new Date().toISOString().split("T")[0]
+    selectedDate: new Date().toISOString().split("T")[0],
+    loading: false,
+    success: false,
+    error: null,
 }
 
 export default initialState;
