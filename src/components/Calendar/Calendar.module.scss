@@ -121,3 +121,67 @@
         }
     }
 }
+
+@media (min-width: 493px) and (max-width: 767px) {
+    .calendarContainer {
+        max-width: 550px;
+        min-width: 300px;
+        max-height: 420px;
+        margin: 20px auto;
+        margin-left: -150px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        .calendarHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: #0652DD;
+            color: white;
+
+            .monthTitle {
+                margin: 0;
+                font-size: 1.35rem;
+                text-transform: capitalize;
+            }
+
+            .navBtn {
+                background: rgba(255,255,255,0.2);
+                padding-bottom: 5px;
+                border: none;
+                color: white;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 1.4rem;
+                cursor: pointer;
+            }
+
+            .navBtn:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+
+            .weekday {
+                padding: 12px 8px;
+                text-align: center;
+                font-size: 0.95rem;
+            }
+        }
+
+        .datesGrid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+    }
+}

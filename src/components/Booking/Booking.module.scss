@@ -112,3 +112,52 @@
     }
 
 }
+
+@media (min-width: 493px) and (max-width: 767px) {
+    .booking {
+        height: 130vh;
+
+        .form {
+            .input1 {
+                width: 350px;
+                margin: 3px;
+                height: 50px;
+                border-radius: 20px;
+                border: none;
+                padding-left: 5px;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .input1::placeholder, .input::placeholder {
+                padding-left: 3px;
+            }
+
+            .input, .input2 {
+                width: 350px;
+                height: 50px;
+                border-radius: 20px;
+                border: none;
+                padding-left: 5px;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+            
+            .btn {
+                background-color: #189642;
+                border: none;
+                color: #fff;
+                width: 275px;
+                height: 70px;
+                font-size: 25px;
+                border-radius: 30px;
+            }
+
+            .btn:hover {
+                background-color: #009432;
+                cursor: pointer;
+            }
+        }
+
+    }
+}

@@ -73,3 +73,40 @@
         }
     }
 }
+
+@media (min-width: 493px) and (max-width: 767px) {
+    .footer {
+        height: 14vh;
+        text-align: left;
+        padding-top: 30px;
+        .wrapper {
+            
+            .ul {
+                margin-top: -50px;
+                font-size: 15px;
+                flex-wrap: wrap;
+                
+                .li {
+                    margin-bottom: 10px;
+                    a {
+                        font-size: 15px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+
+        .h6 {
+            margin-top: 40px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .h6::before {
+            left: 1.5%;
+            height: 2px;
+            width: 95vw;
+            background-color: #fff;
+        }
+    }
+}
