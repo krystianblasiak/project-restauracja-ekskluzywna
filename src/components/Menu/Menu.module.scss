@@ -3,7 +3,7 @@
 .menu {
     background-color: $color-two;
     z-index: 1;
-    margin-top: -2.3%;
+    margin-top: -42px;
     margin-bottom: -16px;
     height: 290vh;
     position: relative;
@@ -72,6 +72,36 @@
             width: 860px;
             height: 2px;
             background-color: #F79F1F;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .menu {
+        
+        height: 250vh;
+
+        .box {
+            .img {
+                height: 75px;
+                width: 75px;
+                border-radius: 50%;
+                position: absolute;
+                transform: translate(50%, 50%);
+                top: -13%;
+                left: 40%;
+            }
+
+            .box1 {
+
+                .p3 {
+                    margin-right: 90px;
+                }
+            }
+
+            .box1::after {
+                max-width: 80%;
+            }
         }
     }
 }
