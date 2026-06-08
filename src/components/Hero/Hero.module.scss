@@ -133,3 +133,35 @@
         }
     }
 }
+
+@media (max-width: 492px) {
+    .h {
+        
+        .wrapper {
+            .box {
+                height: 25vh;
+                width: 58vw;
+                
+                .h1 {
+                    font-size: 30px;
+                }
+
+                .ul {
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    margin-top: 10%;
+
+                    .li {
+                        flex: 50%;
+                        list-style: none;
+                        margin-bottom: 30px;
+                        a {
+                            padding: 7px 7px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

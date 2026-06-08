@@ -119,3 +119,25 @@
         }
     }
 }
+
+@media (max-width: 492px) {
+    .section {
+        .wrapper {
+            flex-direction: column;
+            .form {
+                flex: 100%;
+                .input {
+                    width: 55vw;
+                }
+
+                .textarea {
+                    width: 54vw;
+                }
+
+                .btn {
+                    width: 40vw;
+                }
+            }
+        }
+    }
+}

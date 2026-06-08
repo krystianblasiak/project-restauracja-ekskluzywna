@@ -67,3 +67,22 @@
         }
     }
 }
+
+@media (max-width: 492px) {
+    .section {
+        
+        .wrapper {
+            flex-direction: column;
+            justify-content: center;
+            .img {
+                max-width: 60vw;
+
+            }
+
+            .p {
+                padding-top: 3%;
+                font-size: 19px;
+            }
+        }
+    }
+}

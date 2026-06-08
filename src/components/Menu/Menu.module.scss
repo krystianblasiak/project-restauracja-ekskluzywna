@@ -141,3 +141,37 @@
         }
     }
 }
+
+@media (max-width: 492px) {
+    .menu {
+        height: 270vh;
+
+        .h2 {
+            padding-top: 120px;
+            margin-bottom: 100px;
+        }
+
+        .box {
+            .img {
+                height: 75px;
+                width: 75px;
+                border-radius: 50%;
+                position: absolute;
+                transform: translate(50%, 50%);
+                top: -13%;
+                left: 25%;
+            }
+
+            .box1 {
+
+                .p3 {
+                    margin-right: 90px;
+                }
+            }
+
+            .box1::after {
+                max-width: 83%;
+            }
+        }
+    }
+}
