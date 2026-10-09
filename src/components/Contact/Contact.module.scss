@@ -2,7 +2,7 @@
 
 .section {
     background-color: $color-one;
-    padding-top: 20px;
+    padding-top: 5%;
     padding-bottom: 150px;
     margin-bottom: -16px;
     .h2 {
@@ -71,21 +71,23 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 1101px) and (max-width: 1280px) {
     .section {
         .wrapper {
             flex-direction: column;
             .form {
                 .input {
                     width: 25vw;
+                    height: 7vh;
                 }
 
                 .textarea {
                     width: 54vw;
+                    height: 30vh;
                 }
 
                 .btn {
-                    height: 6vh;
+                    height: 7vh;
                     width: 25vw;
                     font-size: 20px;
                     border-radius: 30px;
@@ -97,31 +99,342 @@
         }
     }
 }
-
-@media (min-width: 493px) and (max-width: 767px) {
+@media (min-width: 1030px) and (max-width: 1100px) {
     .section {
+        height: auto;
+        padding-bottom: 24rem;
         .wrapper {
             flex-direction: column;
             .form {
-                flex: 100%;
                 .input {
-                    width: 55vw;
+                    width: 25vw;
+                    height: 3vh;
                 }
 
                 .textarea {
                     width: 54vw;
+                    height: 15vh;
                 }
 
                 .btn {
-                    width: 40vw;
+                    height: 5vh;
+                    width: 20vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1023px) and (max-width: 1029px) {
+    .section {
+        height: auto;
+        padding-bottom: 10rem;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: 5vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 20vh;
+                }
+
+                .btn {
+                    height: 5vh;
+                    width: auto;
+                    min-width: 20vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1001px) and (max-width: 1022px) {
+    .section {
+        height: auto;
+        padding-bottom: 24rem;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: 3vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 15vh;
+                }
+
+                .btn {
+                    height: 4vh;
+                    width: 20vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 991px) and (max-width: 1000px) {
+    .section {
+        height: auto;
+        padding-bottom: 15rem;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: 5vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 30vh;
+                }
+
+                .btn {
+                    height: 10vh;
+                    width: 20vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
                 }
             }
         }
     }
 }
 
+@media (min-width: 971px) and (max-width: 990px) {
+    .section {
+        height: auto;
+        padding-bottom: 24rem;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: 3vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 15vh;
+                }
+
+                .btn {
+                    height: 4vh;
+                    width: 20vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 959px) and (max-width: 970px) {
+    .section {
+        height: auto;
+        padding-bottom: 50%;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: auto;
+                    padding-top: 2.5%;
+                    padding-bottom: 2.5%;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: auto;
+                    padding-bottom: 20%;
+                }
+
+                .btn {
+                    height: auto;
+                    width: auto;
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 781px) and (max-width: 958px) {
+    .section {
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: 7vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 30vh;
+                }
+
+                .btn {
+                    height: 12vh;
+                    width: 25vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 780px) {
+    .section {
+        .wrapper {
+            flex-direction: column;
+            .form {
+                .input {
+                    width: 25vw;
+                    height: 5vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 20vh;
+                }
+
+                .btn {
+                    height: 5vh;
+                    width: 25vw;
+                    font-size: 20px;
+                    border-radius: 30px;
+                    background-color: $color-two;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 739px) and (max-width: 767px) {
+    .section {
+        padding-top: 10%;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                flex: 100%;
+                .input {
+                    width: 55vw;
+                    height: 7vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 30vh;
+                }
+
+                .btn {
+                    width: auto;
+                    height: auto;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 701px) and (max-width: 738px) {
+    .section {
+        padding-top: 10%;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                flex: 100%;
+                .input {
+                    width: 55vw;
+                    height: 5vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                }
+
+                .btn {
+                    width: auto;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 493px) and (max-width: 700px) {
+    .section {
+        padding-top: 10%;
+        .wrapper {
+            flex-direction: column;
+            .form {
+                flex: 100%;
+                .input {
+                    width: 55vw;
+                    height: 7vh;
+                }
+
+                .textarea {
+                    width: 54vw;
+                    height: 35vh;
+                }
+
+                .btn {
+                    width: auto;
+                    font-size: 16px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 25px;
+                }
+            }
+        }
+    }
+}
 @media (max-width: 492px) {
     .section {
+        padding-top: 10%;
         .wrapper {
             flex-direction: column;
             .form {
@@ -135,7 +448,12 @@
                 }
 
                 .btn {
-                    width: 40vw;
+                    width: auto;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 16px;
                 }
             }
         }
