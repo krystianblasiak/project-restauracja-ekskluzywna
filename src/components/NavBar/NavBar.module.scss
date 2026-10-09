@@ -54,13 +54,67 @@
             }
         }
     }
+    .div {
+        display: none;
+        
+        .btn {
+            font-size: 25px;
+            margin-left: auto;
+            margin-top: 4%;
+            border-radius: 20%;
+            border: none;
+            width: 40px;
+            height: 40px;
+        }
+        .btn:hover {
+            color: $color-two;
+        }
+        
+    }
+    .menu {
+        display: none;
+        height: auto;
+        .ul1 {
+            background-color: rgba(0, 0, 0, 0.6);
+            min-width: 150px;
+            max-width: 150px;
+            height: auto;
+            margin-top: 4.9%;
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            margin-left: 80%;
+            list-style: none;
+            .li1 {
+                padding-top: 10%;
+                a {
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    text-align: center;
+                }
+                a:hover {
+                    color: $color-two;
+                }
+
+                .isActive {
+                    color: $color-two;
+                }
+            }
+            .li1:last-of-type {
+                padding-bottom: 10%;
+            }
+        }
+    }
+    .activeMenu {
+        display: flex;
+    }
 }
+
+
 
 @media (min-width: 768px) and (max-width: 1200px) {
     .nav {
         height: 75px;
         .ul {
-
             .li {
                 font-size: 16px;
             }
@@ -68,33 +122,127 @@
     }
 }
 
-@media (min-width: 493px) and (max-width: 767px) {
+@media (min-width: 671px) and (max-width: 767px) {
     .nav {
         height: 90px;
         
         .ul {
-            flex-wrap: wrap;
-            .li {
-                flex: 33.3%;
-                font-size: 16px;
-                margin-bottom: 10px;
+            display: none;
+        }
+        .div {
+            display: flex;
+        }
+    }
+}
+@media (max-width: 670px) {
+    .nav {
+        height: 70px;
+        
+        .ul {
+            display: none;
+        }
+        .div {
+            display: flex;
+            .btn {
+                margin-left: 85%;
+                margin-top: 3%;
+            }
+        }
+        .menu {
+            .ul1 {
+                margin-top: 2.4%;
+                margin-left: 70%;
+                .li1 {
+                    padding-top: 10%;
+                }
+                .li1:last-of-type {
+                    padding-bottom: 10%;
+                }
             }
         }
     }
 }
 
-@media (max-width: 492px) {
+@media (max-width: 500px) {
     .nav {
-        height: 100px;
+        height: 70px;
+        
         .ul {
-            flex-wrap: wrap;
-            .li {
-                flex: 33.3%;
-                font-size: 15px;
-                margin-bottom: 10px;
-                margin-left: -40px;
-                margin-right: 40px;
+            display: none;
+        }
+        .div {
+            display: flex;
+            .btn {
+                margin-left: 70%;
+            }
+        }
+        .menu {
+            .ul1 {
+                margin-top: 5.9%;
+                margin-left: 50%;
+                .li1 {
+                    padding-top: 10%;
+                }
+                .li1:last-of-type {
+                    padding-bottom: 10%;
+                }
             }
         }
     }
 }
+@media (max-width: 450px) {
+    .nav {
+        height: 70px;
+        
+        .ul {
+            display: none;
+        }
+        .div {
+            display: flex;
+            .btn {
+                margin-left: 70%;
+            }
+        }
+        .menu {
+            .ul1 {
+                margin-top: 4.3%;
+                margin-left: 50%;
+                .li1 {
+                    padding-top: 10%;
+                }
+                .li1:last-of-type {
+                    padding-bottom: 10%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 435px) {
+    .nav {
+        height: 70px;
+        
+        .ul {
+            display: none;
+        }
+        .div {
+            display: flex;
+            .btn {
+                margin-left: 70%;
+            }
+        }
+        .menu {
+            .ul1 {
+                margin-top: 1.15rem;
+                margin-left: 50%;
+                .li1 {
+                    padding-top: 10%;
+                }
+                .li1:last-of-type {
+                    padding-bottom: 10%;
+                }
+            }
+        }
+    }
+}
+
