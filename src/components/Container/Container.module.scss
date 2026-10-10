@@ -6,12 +6,18 @@
 
 @media (min-width: 768px) and (max-width: 1280px){
     .container {
-        max-width: 1200px;
+        max-width: 700px;
     }
 }
 
 @media (max-width: 767px){
     .container {
         max-width: 550px;
+    }
+}
+
+@media (max-width: 492px){
+    .container {
+        max-width: 400px;
     }
 }

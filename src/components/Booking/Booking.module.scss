@@ -3,8 +3,8 @@
 .booking {
     background-color: $color-two;
     margin-top: -43px;
-    margin-bottom: -20px;
-    height: 120vh;
+    height: auto;
+    padding-bottom: 1rem;
 
     .h2 {
         font-size: 50px;
@@ -46,17 +46,31 @@
         .wrapper {
             display: flex;
             flex-direction: row;
-            margin: auto 175px;
+            max-width: 100vw;
+            justify-content: center;
+            .wrap2 {
+                flex: 50%;
+                max-width: 50vw;
+                margin-left: 10%;
+                display: flex;
+                justify-content: center;
+            }
             .box {
                 flex: 50%;
+                max-width: 50vw;
                 margin-top: 30px;
-
+                margin-right: 10%;
                 .box1 {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     
                     .btn1 {
+                        flex: auto;
                         margin: 10px;
                         margin-top: 0;
                         width: 100px;
+                        max-width: 100px;
                         height: 60px;
                         border-radius: 15px;
                         border: 3px solid #0652DD;
@@ -115,7 +129,6 @@
 
 @media (min-width: 493px) and (max-width: 767px) {
     .booking {
-        height: 130vh;
 
         .form {
             .input1 {
@@ -142,7 +155,29 @@
                 margin-bottom: 10px;
                 font-size: 20px;
             }
-
+            .wrapper{
+                flex-direction: column;
+                .wrap2 {
+                    flex: 100%;
+                    max-width: 100vw;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                }
+                .box {
+                    flex: 100%;
+                    max-width: 100vw;
+                    .box1 {
+                        flex-direction: row;
+                        justify-content: center;
+                        .btn1 {
+                            max-width: 100px;
+                        }
+                    }
+                }
+                
+            }
+            
             .btn {
                 background-color: #189642;
                 border: none;
@@ -164,7 +199,6 @@
 
 @media (max-width: 492px) {
     .booking {
-        height: 170vh;
 
         .form {
             .input1 {
@@ -209,21 +243,164 @@
 
             .wrapper {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 flex-wrap: wrap;
-                margin: auto 175px;
+                height: auto;
+                max-width: 100vw;
+                .wrap2 {
+                    flex: 100%;
+                    max-width: 100vw;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                }
                 .box {
-                    flex: 50%;
-                    margin-top: 30px;
-                    
+                    flex: 100%;
+                    width: 300px;
                     .box1 {
-                        
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        min-width: 300px;
+                        justify-content: center;
+                        margin-left: 1.5rem;
                         .btn1 {
-                            margin: 10px;
-                            margin-top: 0;
-                            margin-left: -70px;
-                            width: 100px;
-                            height: 60px;
+                            margin: 0;
+                            margin-left: 30px;
+                            margin-top: 10px;
+                            
+                            width: 100px !important;
+                            height: 60px !important;
+                            border-radius: 15px;
+                            border: 3px solid #0652DD;
+                            color: #0652DD;
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+
+                        .btn1:hover {
+                            color: #fff;
+                            background-color: #0652DD;
+                            cursor: pointer;
+                            transform: scale(1.1);
+                        }
+
+                        .isActive {
+                            border: 3px solid #6e95da;
+                            background-color: #d8d8d8;
+                            color: #6e95da;
+                        }
+
+                        .isActive:hover {
+                            transform: scale(1);
+                            background-color: #d8d8d8;
+                            cursor:no-drop;
+                            color: #6e95da;
+                        }
+
+                        .isClick {
+                            transform: scale(1.1);
+                            background-color: #0652DD;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+
+            .btn {
+                background-color: #189642;
+                border: none;
+                color: #fff;
+                width: 275px;
+                height: 70px;
+                font-size: 25px;
+                border-radius: 30px;
+            }
+
+            .btn:hover {
+                background-color: #009432;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 400px) {
+    .booking {
+
+        .form {
+            .input1 {
+                width: 290px;
+                margin: 3px;
+                height: 50px;
+                border-radius: 20px;
+                border: none;
+                padding-left: 5px;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .input1::placeholder, .input::placeholder {
+                padding-left: 3px;
+            }
+
+            .input, .input2 {
+                width: 290px;
+                height: 50px;
+                border-radius: 20px;
+                border: none;
+                padding-left: 5px;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .btn {
+                background-color: #189642;
+                border: none;
+                color: #fff;
+                width: 275px;
+                height: 70px;
+                font-size: 25px;
+                border-radius: 30px;
+            }
+
+            .btn:hover {
+                background-color: #009432;
+                cursor: pointer;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: auto;
+                max-width: 100vw;
+                .wrap2 {
+                    flex: 100%;
+                    max-width: 100vw;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                }
+                .box {
+                    flex: 100%;
+                    width: 300px;
+                    .box1 {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        min-width: 300px;
+                        justify-content: center;
+                        margin-left: 0rem;
+                        .btn1 {
+                            margin: 0;
+                            margin-left: 30px;
+                            margin-top: 10px;
+                            
+                            width: 100px !important;
+                            height: 60px !important;
                             border-radius: 15px;
                             border: 3px solid #0652DD;
                             color: #0652DD;

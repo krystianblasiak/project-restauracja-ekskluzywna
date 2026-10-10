@@ -116,7 +116,9 @@ const Booking = () => {
                         </option>))}
                     </select>
                     <div className={styles.wrapper}>
-                        <Calendar />
+                        <div className={styles.wrap2}>
+                            <Calendar />
+                        </div>
                         <div className={styles.box}>
                             <div className={styles.box1}>
                                 {availableTime.map(t => <button key={t.id} type="button" className={`${styles.btn1} ${!t.available ? styles.isActive : ''} ${t.id === Number(selectedTime) ? styles.isClick : ''}`} disabled={!t.available} onClick={(e) => {e.preventDefault(); handleTimeClick(t.time, t.id)}}>{t.time}</button>)}
