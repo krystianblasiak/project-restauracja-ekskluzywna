@@ -4,8 +4,8 @@
     background-color: $color-two;
     z-index: 1;
     margin-top: -42px;
-    margin-bottom: -16px;
-    height: 290vh;
+    padding-bottom: 10%;
+    height: auto;
     position: relative;
     .h2 {
         text-align: center;
@@ -75,23 +75,136 @@
         }
     }
 }
-
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 1031px) and (max-width: 1200px) {
     .menu {
-        
-        height: 250vh;
-
-        
-
         .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
             .img {
                 height: 75px;
                 width: 75px;
                 border-radius: 50%;
+                transform: translateX(2.2rem);
                 position: absolute;
-                transform: translate(50%, 50%);
-                top: -13%;
-                left: 40%;
+                top: -6%;
+                margin: 0 auto;
+            }
+
+            .box1 {
+
+                .p3 {
+                    margin-right: 90px;
+                }
+            }
+
+            .box1::after {
+                max-width: 80%;
+            }
+        }
+    }
+}
+@media (min-width: 811px) and (max-width: 1030px) {
+    .menu {
+        .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .img {
+                height: 75px;
+                width: 75px;
+                border-radius: 50%;
+                transform: translateX(2rem);
+                position: absolute;
+                top: -6%;
+                margin: 0 auto;
+            }
+
+            .box1 {
+
+                .p3 {
+                    margin-right: 90px;
+                }
+            }
+
+            .box1::after {
+                max-width: 80%;
+            }
+        }
+    }
+}
+@media (min-width: 811px) and (max-width: 1023px) {
+    .menu {
+        .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .img {
+                height: 75px;
+                width: 75px;
+                border-radius: 50%;
+                transform: translateX(1.5rem);
+                position: absolute;
+                top: -6%;
+                margin: 0 auto;
+            }
+
+            .box1 {
+
+                .p3 {
+                    margin-right: 90px;
+                }
+            }
+
+            .box1::after {
+                max-width: 80%;
+            }
+        }
+    }
+}
+@media (min-width: 796px) and (max-width: 810px) {
+    .menu {
+        .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .img {
+                height: 75px;
+                width: 75px;
+                border-radius: 50%;
+                transform: translateX(1rem);
+                position: absolute;
+                top: -6%;
+                margin: 0 auto;
+            }
+
+            .box1 {
+
+                .p3 {
+                    margin-right: 90px;
+                }
+            }
+
+            .box1::after {
+                max-width: 80%;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 795px) {
+    .menu {
+        .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .img {
+                height: 75px;
+                width: 75px;
+                border-radius: 50%;
+                transform: translateX(1rem);
+                position: absolute;
+                top: -6%;
+                margin: 0 auto;
             }
 
             .box1 {
@@ -110,22 +223,23 @@
 
 @media (min-width: 493px) and (max-width: 767px) {
     .menu {
-        height: 250vh;
-
         .h2 {
             padding-top: 120px;
             margin-bottom: 100px;
         }
 
         .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
             .img {
                 height: 75px;
                 width: 75px;
                 border-radius: 50%;
+                transform: translateX(0.2rem);
                 position: absolute;
-                transform: translate(50%, 50%);
-                top: -13%;
-                left: 33%;
+                top: -6%;
+                margin: 0 auto;
             }
 
             .box1 {
@@ -144,22 +258,23 @@
 
 @media (max-width: 492px) {
     .menu {
-        height: 270vh;
-
         .h2 {
             padding-top: 120px;
             margin-bottom: 100px;
         }
 
         .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
             .img {
                 height: 75px;
                 width: 75px;
                 border-radius: 50%;
+                transform: translateX(-0.8rem);
                 position: absolute;
-                transform: translate(50%, 50%);
-                top: -13%;
-                left: 25%;
+                top: -6%;
+                margin: 0 auto;
             }
 
             .box1 {

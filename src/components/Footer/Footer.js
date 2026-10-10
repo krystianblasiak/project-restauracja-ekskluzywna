@@ -16,7 +16,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </Container>
-            <h6 className={styles.h6}>Copyright 2026 © Restauracja Ekskluzywna. Wszelkie prawa zastrzeżone.</h6>
+            <h6 className={styles.h6}>Copyright 2026 © Restauracja Ekskluzywna. Wszelkie prawa zastrzeżone. <a className={styles.aPrivate} href="/polityka-prywatnosci">Polityka prywatności</a></h6>
         </footer>
     )
 }
