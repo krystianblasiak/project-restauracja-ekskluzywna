@@ -33,14 +33,16 @@ const NavBar = () => {
                 <div className={styles.div}>
                     <button className={styles.btn} onClick={handlerHumburger}><i className="fa-solid fa-bars"></i></button>
                 </div>
-                <div className={`${styles.menu} ${isOpen ? styles.activeMenu : ""}`}>
-                    <ul className={styles.ul1}>
-                        <li className={styles.li1}><NavLink to="/" className={({ isActive }) => isActive ? styles.isActive : undefined }>Strona Główna</NavLink></li>
-                        <li className={styles.li1}><NavLink to="/menu" className={({ isActive }) => isActive ? styles.isActive : undefined }>Menu</NavLink></li>
-                        <li className={styles.li1}><a href="/#onas" className={({ isActive }) => isActive ? styles.isActive : undefined }>O nas</a></li>
-                        <li className={styles.li1}><NavLink to="/rezerwacja" className={({ isActive }) => isActive ? styles.isActive : undefined }>Rezerwacja</NavLink></li>
-                        <li className={styles.li1}><a href="/#kontakt" className={({ isActive }) => isActive ? styles.isActive : undefined }>Kontakt</a></li>
-                    </ul>
+                <div className={styles.wrap}>
+                    <div className={`${styles.menu} ${isOpen ? styles.activeMenu : ""}`}>
+                        <ul className={styles.ul1}>
+                            <li className={styles.li1}><NavLink to="/" className={({ isActive }) => isActive ? styles.isActive : undefined }>Strona Główna</NavLink></li>
+                            <li className={styles.li1}><NavLink to="/menu" className={({ isActive }) => isActive ? styles.isActive : undefined }>Menu</NavLink></li>
+                            <li className={styles.li1}><a href="/#onas" className={({ isActive }) => isActive ? styles.isActive : undefined }>O nas</a></li>
+                            <li className={styles.li1}><NavLink to="/rezerwacja" className={({ isActive }) => isActive ? styles.isActive : undefined }>Rezerwacja</NavLink></li>
+                            <li className={styles.li1}><a href="/#kontakt" className={({ isActive }) => isActive ? styles.isActive : undefined }>Kontakt</a></li>
+                        </ul>
+                    </div>
                 </div>
             </Container>
         </nav>

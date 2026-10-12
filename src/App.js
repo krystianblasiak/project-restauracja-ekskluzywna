@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import NotFound from "./components/NotFound/NotFound";
 import Menu from "./components/Menu/Menu";
 import Booking from "./components/Booking/Booking";
+import PrivatePolicy from "./components/PrivatePolicy/PrivatePolicy";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/rezerwacja" element={<Booking />} />
+          <Route path="/polityka-prywatnosci" element={<PrivatePolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       <Footer />
