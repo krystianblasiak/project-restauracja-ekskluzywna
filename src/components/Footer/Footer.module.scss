@@ -3,12 +3,13 @@
 .footer {
     background-color: #151515;
     height: auto;
-    padding-bottom: 2.5rem;
+    padding-bottom: calc(1vh + env(safe-area-inset-bottom));
     color: #fff;
     text-align: center;
     margin: 0 auto;
     margin-top: 0;
     padding-top: 1%;
+
     position: static;
     .wrapper {
         .ul {
@@ -59,6 +60,33 @@
 
 .aPrivate:hover {
     color: $color-two;
+}
+@media (min-width: 1439px) and (max-width: 1441px) {
+    .footer {
+        height: auto;
+        padding-bottom: 2.7rem;
+        .wrapper {
+            .ul {
+                padding-bottom: 10px;
+                font-size: 15px;
+
+                .li {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .h6 {
+            font-size: 12px;
+            margin-top: 0;
+        }
+        .h6::before {
+            left: 0;
+            width: 100vw;
+        }
+    }
 }
 @media (min-width: 1375px) and (max-width: 1377px) {
     .footer {
